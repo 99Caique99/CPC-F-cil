@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07090F">
-<meta name="description" content="CPC Fácil — Plataforma de Inteligência de Dados para análise de crédito, recuperação de débitos, consultas veiculares e prevenção a fraudes.">
-<title>CPC Fácil | Inteligência de Dados</title>
+<meta name="description" content="CPC Fácil — Plataforma de Inteligência de Dados Premium para análise de crédito, recuperação de débitos, consultas veiculares e prevenção a fraudes.">
+<title>CPC Fácil | Inteligência de Dados Premium</title>
 
 <!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +14,7 @@
 
 
 <style>
-/* ════════════════════════════════════════════════════════════════
-   CPC FÁCIL · PREMIUM DATA INTELLIGENCE · DESIGN SYSTEM
-   ════════════════════════════════════════════════════════════════ */
+
 
 /* ── 01 · RESET ─────────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -1177,9 +1175,12 @@ body{
 .cgrid-card a.cg-val{transition:color .25s}
 .cgrid-card a.cg-val:hover{color:var(--gold-bright)}
 
-/* Antecedentes Criminais centralizado (4º card órfão) */
+/* Antecedentes Criminais + CNDT centralizados (2 últimos cards órfãos) */
 @media(min-width:1024px){
-  #s-comport .card-grid>.fc:nth-child(4){grid-column:2/3}
+  #s-comport .card-grid{grid-template-columns:repeat(6,1fr) !important}
+  #s-comport .card-grid>.fc{grid-column:span 2}
+  #s-comport .card-grid>.fc:nth-child(4){grid-column:2/4}
+  #s-comport .card-grid>.fc:nth-child(5){grid-column:4/6}
 }
 
 /* Trabalhe com Segurança: grade 2x2 (não 3+1), cards maiores */
@@ -1221,6 +1222,16 @@ body{
   #s-25 .iconbox-grid>.iconbox:nth-child(4){grid-column:2/4}
   #s-25 .iconbox-grid>.iconbox:nth-child(5){grid-column:4/6}
 }
+
+/* ── 53 · RATING PF E PJ — badges de classificação ──────────────── */
+.rating-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.rating-chip{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:600;
+    padding:.42rem .85rem;border-radius:9px;color:var(--gold-bright);
+    background:rgba(245,150,11,.08);border:1px solid rgba(245,150,11,.25);
+    transition:transform .25s var(--ease),border-color .25s,color .25s}
+.rating-chip:hover{transform:translateY(-3px);border-color:rgba(245,150,11,.55);color:#fff}
+[data-theme="light"] .rating-chip{color:#A66A05;background:rgba(166,106,5,.07);border-color:rgba(166,106,5,.25)}
+[data-theme="light"] .rating-chip:hover{color:#3E6B00;border-color:rgba(166,106,5,.5)}
 </style>
 </head>
 <body>
@@ -1317,25 +1328,26 @@ body{
     <div class="tc-grid">
       <a class="tc aoe" href="#s-visao" data-link=""><span class="tc-num">02</span><span class="tc-label">Visão geral</span></a>
       <a class="tc aoe" href="#s-04" data-link=""><span class="tc-num">03</span><span class="tc-label">Análise de crédito: benefícios</span></a>
-      <a class="tc aoe" href="#s-fam-pf" data-link=""><span class="tc-num">04</span><span class="tc-label">Família Cred PF</span></a>
-      <a class="tc aoe" href="#s-comp-pf" data-link=""><span class="tc-num">05</span><span class="tc-label">Comparativo Cred PF Positivo e Negativo</span></a>
-      <a class="tc aoe" href="#s-credpf" data-link=""><span class="tc-num">06</span><span class="tc-label">Análise de crédito Pessoa Física</span></a>
-      <a class="tc aoe" href="#s-fam-pj" data-link=""><span class="tc-num">07</span><span class="tc-label">Família Cred PJ</span></a>
-      <a class="tc aoe" href="#s-comp-pj" data-link=""><span class="tc-num">08</span><span class="tc-label">Comparativo Cred PJ Positivo e Negativo</span></a>
-      <a class="tc aoe" href="#s-credpj" data-link=""><span class="tc-num">09</span><span class="tc-label">Análise de crédito Pessoa Jurídica</span></a>
+      <a class="tc aoe" href="#s-credpf" data-link=""><span class="tc-num">04</span><span class="tc-label">Análise de crédito Pessoa Física</span></a>
+      <a class="tc aoe" href="#s-fam-pf" data-link=""><span class="tc-num">05</span><span class="tc-label">Família Cred PF</span></a>
+      <a class="tc aoe" href="#s-comp-pf" data-link=""><span class="tc-num">06</span><span class="tc-label">Comparativo Cred PF Positivo e Negativo</span></a>
+      <a class="tc aoe" href="#s-credpj" data-link=""><span class="tc-num">07</span><span class="tc-label">Análise de crédito Pessoa Jurídica</span></a>
+      <a class="tc aoe" href="#s-fam-pj" data-link=""><span class="tc-num">08</span><span class="tc-label">Família Cred PJ</span></a>
+      <a class="tc aoe" href="#s-comp-pj" data-link=""><span class="tc-num">09</span><span class="tc-label">Comparativo Cred PJ Positivo e Negativo</span></a>
       <a class="tc aoe" href="#s-comum" data-link=""><span class="tc-num">10</span><span class="tc-label">Consultas de Crédito em comum para PF e PJ</span></a>
       <a class="tc aoe" href="#s-14" data-link=""><span class="tc-num">11</span><span class="tc-label">Negativação de devedores</span></a>
       <a class="tc aoe" href="#s-comport" data-link=""><span class="tc-num">12</span><span class="tc-label">Consultas para análise comportamental</span></a>
-      <a class="tc aoe" href="#s-busca" data-link=""><span class="tc-num">13</span><span class="tc-label">Consultas para busca e localização</span></a>
-      <a class="tc aoe" href="#s-16" data-link=""><span class="tc-num">14</span><span class="tc-label">Informações Veiculares</span></a>
-      <a class="tc aoe" href="#s-veic" data-link=""><span class="tc-num">15</span><span class="tc-label">Informações Veiculares / Consultas</span></a>
-      <a class="tc aoe" href="#s-trabalhe" data-link=""><span class="tc-num">16</span><span class="tc-label">Trabalhe com Segurança</span></a>
-      <a class="tc aoe" href="#s-25" data-link=""><span class="tc-num">17</span><span class="tc-label">Exclusividade CPC Fácil</span></a>
-      <a class="tc aoe" href="#s-antifraude" data-link=""><span class="tc-num">18</span><span class="tc-label">Antifraude</span></a>
-      <a class="tc aoe" href="#s-relatorios" data-link=""><span class="tc-num">19</span><span class="tc-label">Relatórios Personalizados</span></a>
-      <a class="tc aoe" href="#s-facilite" data-link=""><span class="tc-num">20</span><span class="tc-label">Facilite Transações Veiculares</span></a>
-      <a class="tc aoe" href="#s-assinatura" data-link=""><span class="tc-num">21</span><span class="tc-label">Assine digitalmente</span></a>
-      <a class="tc aoe" href="#s-contact" data-link=""><span class="tc-num">22</span><span class="tc-label">Venha Aumentar Suas Vendas!</span></a>
+      <a class="tc aoe" href="#s-rating" data-link=""><span class="tc-num">13</span><span class="tc-label">Rating PF e PJ</span></a>
+      <a class="tc aoe" href="#s-busca" data-link=""><span class="tc-num">14</span><span class="tc-label">Consultas para busca e localização</span></a>
+      <a class="tc aoe" href="#s-16" data-link=""><span class="tc-num">15</span><span class="tc-label">Informações Veiculares</span></a>
+      <a class="tc aoe" href="#s-veic" data-link=""><span class="tc-num">16</span><span class="tc-label">Informações Veiculares / Consultas</span></a>
+      <a class="tc aoe" href="#s-trabalhe" data-link=""><span class="tc-num">17</span><span class="tc-label">Trabalhe com Segurança</span></a>
+      <a class="tc aoe" href="#s-25" data-link=""><span class="tc-num">18</span><span class="tc-label">Exclusividade CPC Fácil</span></a>
+      <a class="tc aoe" href="#s-antifraude" data-link=""><span class="tc-num">19</span><span class="tc-label">Antifraude</span></a>
+      <a class="tc aoe" href="#s-relatorios" data-link=""><span class="tc-num">20</span><span class="tc-label">Relatórios Personalizados</span></a>
+      <a class="tc aoe" href="#s-facilite" data-link=""><span class="tc-num">21</span><span class="tc-label">Facilite Transações Veiculares</span></a>
+      <a class="tc aoe" href="#s-assinatura" data-link=""><span class="tc-num">22</span><span class="tc-label">Assine digitalmente</span></a>
+      <a class="tc aoe" href="#s-contact" data-link=""><span class="tc-num">23</span><span class="tc-label">Venha Aumentar Suas Vendas!</span></a>
     </div>
   </div><span class="sec-num" aria-hidden="true">01 /</span>
 </section>
@@ -1414,6 +1426,80 @@ body{
       </div>
     </div>
   </div><span class="sec-num" aria-hidden="true">04 /</span>
+</section>
+
+<!-- ══════════════ CRÉDITO PESSOA FÍSICA ══════════════ -->
+<section class="cf" id="s-credpf">
+  <div class="cf-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <div class="cf-head aoe"><span class="ptag"><span class="ptag-dot"></span>Pessoa Física</span>
+      <h2 class="section-h2">Análise, concessão e recuperação de crédito (Pessoa Física)</h2>
+    </div>
+    <div class="card-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:.9rem;margin-top:1.2rem">
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="9" cy="6.5" rx="6" ry="3"></ellipse><path d="M3 6.5v5c0 1.6 2.7 3 6 3"></path><path d="M3 11.5v3c0 1.6 2.7 3 6 3"></path><circle cx="16.5" cy="15" r="5"></circle></svg>
+          </div>
+          <div class="fc-title">Quod
+          </div>
+        </div>
+        <div class="fc-body">Registra as movimentações financeiras com base em dados fornecidos pelos cinco maiores bancos do Brasil, incluindo informações sobre restrições bancárias. Análise do comportamento financeiro para calcular a probabilidade de inadimplência de pessoas físicas ou jurídicas. Inclui: Módulo de Informações Cadastrais: consolida dados de identificação. Módulo de Restritivos: abrange registros de negativações, ações judiciais e CCF. Módulo de Score: apresenta indicadores baseados no Cadastro Positivo, fornecendo uma análise detalhada do perfil de risco. Busca realizada por CPF.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="fc-title">Restrição Financeira
+          </div>
+        </div>
+        <div class="fc-body">Informações sobre pendências e restrições financeiras, cheque sem fundo e protesto nacional, base Cenprot. Obtenha o detalhamento de 05 apontamentos. Busca realizada por CPF.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 11a7 7 0 0 1 13-2.6"></path><path d="M8 13a4 4 0 0 1 8 0c0 3.4-.8 5.4-1.1 6"></path><path d="M12 13c.6 0 1.2.5 1.2 1.4 0 2.4-.7 3.9-1 4.6"></path><path d="M9 19.5c.4-1 .7-2.4.7-4.5"></path></svg>
+          </div>
+          <div class="fc-title">Restrição PF + Score
+          </div>
+        </div>
+        <div class="fc-body">Traz informações sobre pendência financeira, pendência vencida, score, cheque sem fundo, protesto nacional e participação societária.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><line x1="3" y1="9.5" x2="21" y2="9.5"></line><line x1="7" y1="14.5" x2="11" y2="14.5"></line></svg>
+          </div>
+          <div class="fc-title">Max
+          </div>
+        </div>
+        <div class="fc-body">Síntese creditícia completa de pessoas físicas com cobertura nacional de protestos. O Max PF + Protesto Nacional reúne débitos, pendências financeiras, protestos nacionais, CCF, cheques contra-ordem, cheques lojistas, contumácias, localização, telefones e alerta de documentos em um único retorno. Busca realizada por CPF.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v15a1 1 0 0 0 1 1h15"></path><polyline points="7 14 11 10 14 13 19 7"></polyline></svg>
+          </div>
+          <div class="fc-title">Max Avançada
+          </div>
+        </div>
+        <div class="fc-body">Informações de restrições financeiras, débitos, score e CCF e com Protesto Nacional. Busca realizada por CPF.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><polyline points="9 15 11 17 15 13"></polyline></svg>
+          </div>
+          <div class="fc-title">Relatório Básico Plus
+          </div>
+        </div>
+        <div class="fc-body">Retorna o quadro restritivo do consumidor visualizando informações de cheques sem fundos, pendências financeiras, REFIN, dívidas vencidas, pendências internas (direto com o Bureau), títulos protestados. Analise a probabilidade de inadimplência através do score positivo no período de 12 meses. Visualize registros de alertas de documentos furtados, roubados ou extraviados, indicativo de nomes similares ao documento consultado (homônimos). Busca realizada por CPF.
+        </div>
+      </div>
+    </div>
+  </div><span class="sec-num" aria-hidden="true">05 /</span>
 </section>
 
 <!-- ══════════════ COMPARATIVO CRED PF ══════════════ -->
@@ -1910,80 +1996,6 @@ body{
         </tbody>
       </table>
     </div>
-  </div><span class="sec-num" aria-hidden="true">05 /</span>
-</section>
-
-<!-- ══════════════ CRÉDITO PESSOA FÍSICA ══════════════ -->
-<section class="cf" id="s-credpf">
-  <div class="cf-bg" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy" decoding="async">
-  </div>
-  <div class="wrap">
-    <div class="cf-head aoe"><span class="ptag"><span class="ptag-dot"></span>Pessoa Física</span>
-      <h2 class="section-h2">Análise, concessão e recuperação de crédito (Pessoa Física)</h2>
-    </div>
-    <div class="card-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:.9rem;margin-top:1.2rem">
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="9" cy="6.5" rx="6" ry="3"></ellipse><path d="M3 6.5v5c0 1.6 2.7 3 6 3"></path><path d="M3 11.5v3c0 1.6 2.7 3 6 3"></path><circle cx="16.5" cy="15" r="5"></circle></svg>
-          </div>
-          <div class="fc-title">Quod
-          </div>
-        </div>
-        <div class="fc-body">Registra as movimentações financeiras com base em dados fornecidos pelos cinco maiores bancos do Brasil, incluindo informações sobre restrições bancárias. Análise do comportamento financeiro para calcular a probabilidade de inadimplência de pessoas físicas ou jurídicas. Inclui: Módulo de Informações Cadastrais: consolida dados de identificação. Módulo de Restritivos: abrange registros de negativações, ações judiciais e CCF. Módulo de Score: apresenta indicadores baseados no Cadastro Positivo, fornecendo uma análise detalhada do perfil de risco. Busca realizada por CPF.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div class="fc-title">Restrição Financeira
-          </div>
-        </div>
-        <div class="fc-body">Informações sobre pendências e restrições financeiras, cheque sem fundo e protesto nacional, base Cenprot. Obtenha o detalhamento de 05 apontamentos. Busca realizada por CPF.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 11a7 7 0 0 1 13-2.6"></path><path d="M8 13a4 4 0 0 1 8 0c0 3.4-.8 5.4-1.1 6"></path><path d="M12 13c.6 0 1.2.5 1.2 1.4 0 2.4-.7 3.9-1 4.6"></path><path d="M9 19.5c.4-1 .7-2.4.7-4.5"></path></svg>
-          </div>
-          <div class="fc-title">Restrição PF + Score
-          </div>
-        </div>
-        <div class="fc-body">Traz informações sobre pendência financeira, pendência vencida, score, cheque sem fundo, protesto nacional e participação societária.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><line x1="3" y1="9.5" x2="21" y2="9.5"></line><line x1="7" y1="14.5" x2="11" y2="14.5"></line></svg>
-          </div>
-          <div class="fc-title">Max
-          </div>
-        </div>
-        <div class="fc-body">Síntese creditícia completa de pessoas físicas com cobertura nacional de protestos. O Max PF + Protesto Nacional reúne débitos, pendências financeiras, protestos nacionais, CCF, cheques contra-ordem, cheques lojistas, contumácias, localização, telefones e alerta de documentos em um único retorno. Busca realizada por CPF.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v15a1 1 0 0 0 1 1h15"></path><polyline points="7 14 11 10 14 13 19 7"></polyline></svg>
-          </div>
-          <div class="fc-title">Max Avançada
-          </div>
-        </div>
-        <div class="fc-body">Informações de restrições financeiras, débitos, score e CCF e com Protesto Nacional. Busca realizada por CPF.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><polyline points="9 15 11 17 15 13"></polyline></svg>
-          </div>
-          <div class="fc-title">Relatório Básico Plus
-          </div>
-        </div>
-        <div class="fc-body">Retorna o quadro restritivo do consumidor visualizando informações de cheques sem fundos, pendências financeiras, REFIN, dívidas vencidas, pendências internas (direto com o Bureau), títulos protestados. Analise a probabilidade de inadimplência através do score positivo no período de 12 meses. Visualize registros de alertas de documentos furtados, roubados ou extraviados, indicativo de nomes similares ao documento consultado (homônimos). Busca realizada por CPF.
-        </div>
-      </div>
-    </div>
   </div><span class="sec-num" aria-hidden="true">06 /</span>
 </section>
 
@@ -2008,6 +2020,81 @@ body{
       </div>
     </div>
   </div><span class="sec-num" aria-hidden="true">07 /</span>
+</section>
+
+<!-- ══════════════ CRÉDITO PESSOA JURÍDICA ══════════════ -->
+<section class="cf" id="s-credpj" data-theme="light">
+  <div class="cf-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <div class="cf-head aoe"><span class="ptag"><span class="ptag-dot"></span>Pessoa Jurídica</span>
+      <h2 class="section-h2">Análise de crédito — Pessoa Jurídica</h2>
+      <p class="lead">As soluções de Pessoa Jurídica permitem analisar o cliente, recomendar o melhor negócio e facilitar a venda!</p>
+    </div>
+    <div class="card-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:.9rem;margin-top:1.2rem">
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="9" cy="6.5" rx="6" ry="3"></ellipse><path d="M3 6.5v5c0 1.6 2.7 3 6 3"></path><path d="M3 11.5v3c0 1.6 2.7 3 6 3"></path><circle cx="16.5" cy="15" r="5"></circle></svg>
+          </div>
+          <div class="fc-title">Quod Consulta PJ
+          </div>
+        </div>
+        <div class="fc-body">Registra as movimentações financeiras com base em dados fornecidos pelos cinco maiores bancos do Brasil, incluindo informações sobre restrições bancárias. Análise do comportamento financeiro para calcular a probabilidade de inadimplência de pessoas físicas ou jurídicas. Inclui: Módulo de Informações Cadastrais: consolida dados de identificação. Módulo de Restritivos: abrange registros de negativações, ações judiciais e CCF. Módulo de Score: apresenta indicadores baseados no Cadastro Positivo, fornecendo uma análise detalhada do perfil de risco. Busca realizada por CNPJ.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="fc-title">Restrição Financeira PJ
+          </div>
+        </div>
+        <div class="fc-body">Traz informações sobre pendência e restrição financeira, cheque sem fundo e protesto nacional, base Cenprot. Busca realizada por CNPJ.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><line x1="3" y1="9.5" x2="21" y2="9.5"></line><line x1="7" y1="14.5" x2="11" y2="14.5"></line></svg>
+          </div>
+          <div class="fc-title">MAX PJ
+          </div>
+        </div>
+        <div class="fc-body">Informações de restrições financeiras, débitos, CCF e com protesto nacional. Busca realizada por CNPJ.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><polyline points="9 15 11 17 15 13"></polyline></svg>
+          </div>
+          <div class="fc-title">Relatório Básico Plus PJ
+          </div>
+        </div>
+        <div class="fc-body">Obtenha o quadro restritivo da empresa visualizando informações de cheques sem fundos, pendências financeiras, REFIN, dívidas vencidas, pendências internas (direto com o Bureau), títulos protestados. Analise a probabilidade de inadimplência através do score positivo no período de 12 meses, alertas de documentos roubados. Busca realizada por CNPJ.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v15a1 1 0 0 0 1 1h15"></path><polyline points="7 14 11 10 14 13 19 7"></polyline></svg>
+          </div>
+          <div class="fc-title">Max Avançada Score PJ
+          </div>
+        </div>
+        <div class="fc-body">Informações de restrições financeiras, débitos, score e CCF. Conjugada com Protesto Nacional.
+        </div>
+      </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 11a7 7 0 0 1 13-2.6"></path><path d="M8 13a4 4 0 0 1 8 0c0 3.4-.8 5.4-1.1 6"></path><path d="M12 13c.6 0 1.2.5 1.2 1.4 0 2.4-.7 3.9-1 4.6"></path><path d="M9 19.5c.4-1 .7-2.4.7-4.5"></path></svg>
+          </div>
+          <div class="fc-title">Restrição PJ + Score
+          </div>
+        </div>
+        <div class="fc-body">Traz informações sobre pendência financeira, pendência vencida, score, cheque sem fundo, protesto nacional e participação societária.
+        </div>
+      </div>
+    </div>
+  </div><span class="sec-num" aria-hidden="true">08 /</span>
 </section>
 
 <!-- ══════════════ COMPARATIVO CRED PJ ══════════════ -->
@@ -2396,81 +2483,6 @@ body{
         </tbody>
       </table>
     </div>
-  </div><span class="sec-num" aria-hidden="true">08 /</span>
-</section>
-
-<!-- ══════════════ CRÉDITO PESSOA JURÍDICA ══════════════ -->
-<section class="cf" id="s-credpj" data-theme="light">
-  <div class="cf-bg" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="" loading="lazy" decoding="async">
-  </div>
-  <div class="wrap">
-    <div class="cf-head aoe"><span class="ptag"><span class="ptag-dot"></span>Pessoa Jurídica</span>
-      <h2 class="section-h2">Análise de crédito — Pessoa Jurídica</h2>
-      <p class="lead">As soluções de Pessoa Jurídica permitem analisar o cliente, recomendar o melhor negócio e facilitar a venda!</p>
-    </div>
-    <div class="card-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:.9rem;margin-top:1.2rem">
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="9" cy="6.5" rx="6" ry="3"></ellipse><path d="M3 6.5v5c0 1.6 2.7 3 6 3"></path><path d="M3 11.5v3c0 1.6 2.7 3 6 3"></path><circle cx="16.5" cy="15" r="5"></circle></svg>
-          </div>
-          <div class="fc-title">Quod Consulta PJ
-          </div>
-        </div>
-        <div class="fc-body">Registra as movimentações financeiras com base em dados fornecidos pelos cinco maiores bancos do Brasil, incluindo informações sobre restrições bancárias. Análise do comportamento financeiro para calcular a probabilidade de inadimplência de pessoas físicas ou jurídicas. Inclui: Módulo de Informações Cadastrais: consolida dados de identificação. Módulo de Restritivos: abrange registros de negativações, ações judiciais e CCF. Módulo de Score: apresenta indicadores baseados no Cadastro Positivo, fornecendo uma análise detalhada do perfil de risco. Busca realizada por CNPJ.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div class="fc-title">Restrição Financeira PJ
-          </div>
-        </div>
-        <div class="fc-body">Traz informações sobre pendência e restrição financeira, cheque sem fundo e protesto nacional, base Cenprot. Busca realizada por CNPJ.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><line x1="3" y1="9.5" x2="21" y2="9.5"></line><line x1="7" y1="14.5" x2="11" y2="14.5"></line></svg>
-          </div>
-          <div class="fc-title">MAX PJ
-          </div>
-        </div>
-        <div class="fc-body">Informações de restrições financeiras, débitos, CCF e com protesto nacional. Busca realizada por CNPJ.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><polyline points="9 15 11 17 15 13"></polyline></svg>
-          </div>
-          <div class="fc-title">Relatório Básico Plus PJ
-          </div>
-        </div>
-        <div class="fc-body">Obtenha o quadro restritivo da empresa visualizando informações de cheques sem fundos, pendências financeiras, REFIN, dívidas vencidas, pendências internas (direto com o Bureau), títulos protestados. Analise a probabilidade de inadimplência através do score positivo no período de 12 meses, alertas de documentos roubados. Busca realizada por CNPJ.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v15a1 1 0 0 0 1 1h15"></path><polyline points="7 14 11 10 14 13 19 7"></polyline></svg>
-          </div>
-          <div class="fc-title">Max Avançada Score PJ
-          </div>
-        </div>
-        <div class="fc-body">Informações de restrições financeiras, débitos, score e CCF. Conjugada com Protesto Nacional.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 11a7 7 0 0 1 13-2.6"></path><path d="M8 13a4 4 0 0 1 8 0c0 3.4-.8 5.4-1.1 6"></path><path d="M12 13c.6 0 1.2.5 1.2 1.4 0 2.4-.7 3.9-1 4.6"></path><path d="M9 19.5c.4-1 .7-2.4.7-4.5"></path></svg>
-          </div>
-          <div class="fc-title">Restrição PJ + Score
-          </div>
-        </div>
-        <div class="fc-body">Traz informações sobre pendência financeira, pendência vencida, score, cheque sem fundo, protesto nacional e participação societária.
-        </div>
-      </div>
-    </div>
   </div><span class="sec-num" aria-hidden="true">09 /</span>
 </section>
 
@@ -2618,8 +2630,50 @@ body{
         <div class="fc-body">Obtenha processos criminais, julgados ou não. A busca é realizada em todos tribunais criminais estaduais (totalizando 115) em 1ª, 2ª e 3ª instâncias. Retorno 100% em tempo real. Busca realizada por CPF.
         </div>
       </div>
+      <div class="fc aoe">
+        <div class="fc-head">
+          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><polyline points="9 15 11 17 15 13"></polyline><line x1="9" y1="18" x2="12" y2="18"></line></svg>
+          </div>
+          <div class="fc-title">CNDT
+          </div>
+        </div>
+        <div class="fc-body">Com dados provenientes da Justiça do Trabalho, a CNDT permite identificar pessoas físicas e jurídicas que possuem inadimplências perante a Justiça do Trabalho relacionadas a obrigações reconhecidas em decisões judiciais ou acordos com força executiva.
+        </div>
+      </div>
     </div>
+    
   </div><span class="sec-num" aria-hidden="true">12 /</span>
+</section>
+
+<!-- ══════════════ RATING PF E PJ ══════════════ -->
+<section class="sf" id="s-rating">
+  <div class="sf-inner">
+    <div class="sf-text"><span class="ptag"><span class="ptag-dot"></span>Crédito em comum PF e PJ</span>
+      <h2 class="section-h2 aoe">Rating PF e PJ</h2>
+      <p class="vg-lead1 aoe d1">Permite analisar a classificação de risco atribuída ao cliente com base em seu relacionamento e histórico financeiro junto às instituições bancárias.</p>
+      <div class="vg-rule aoe d2" aria-hidden="true">
+      </div>
+      <div style="margin-top:.2rem">
+        <div class="cli aoe d2"><span class="cli-dot"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="#8FDD1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span>A consulta apresenta o <b>Rating Bancário</b> e o <b>Score Alfabético</b>, proporcionando uma visão mais ampla sobre o perfil de risco e a capacidade de cumprimento das obrigações financeiras.</span>
+        </div>
+        <div class="cli aoe d3"><span class="cli-dot"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="#8FDD1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span>O <b>Score Alfabético</b> utiliza classificações por letras, que indicam diferentes níveis de risco, permitindo uma análise mais objetiva para apoiar decisões relacionadas à concessão de crédito.</span>
+        </div>
+        <div class="cli aoe d4"><span class="cli-dot"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="#8FDD1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span>Ferramenta de análise de crédito.</span>
+        </div>
+      </div>
+    </div>
+    <div class="sf-visual aoe d2">
+      <div class="sf-imgbox">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&amp;q=80&amp;auto=format&amp;fit=crop" srcset="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&amp;q=80&amp;auto=format&amp;fit=crop 600w, https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&amp;q=80&amp;auto=format&amp;fit=crop 900w, https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&amp;q=80&amp;auto=format&amp;fit=crop 1200w, https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1600&amp;q=80&amp;auto=format&amp;fit=crop 1600w" sizes="(min-width:1000px) 50vw, 100vw" alt="Classificação de risco e rating bancário" loading="lazy" decoding="async">
+        <div class="img-grad">
+        </div>
+        <div class="img-shine">
+        </div>
+        <div class="img-cap"><span class="cap-dot"></span>Rating PF e PJ
+        </div>
+      </div>
+    </div>
+  </div><span class="sec-num" aria-hidden="true">13 /</span>
 </section>
 
 <!-- ══════════════ BUSCA E LOCALIZAÇÃO ══════════════ -->
@@ -2715,7 +2769,7 @@ body{
         </div>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">13 /</span>
+  </div><span class="sec-num" aria-hidden="true">14 /</span>
 </section>
 
 <!-- ══════════════ INFORMAÇÕES VEICULARES (overview) ══════════════ -->
@@ -2744,7 +2798,7 @@ body{
         <h3>Restrições, bloqueios e impedimentos</h3>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">14 /</span>
+  </div><span class="sec-num" aria-hidden="true">15 /</span>
   <div class="car-wm" aria-hidden="true" style="animation-delay: 0s;">
     <div class="car-light">
     </div>
@@ -2941,7 +2995,7 @@ body{
         </div>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">15 /</span>
+  </div><span class="sec-num" aria-hidden="true">16 /</span>
   <div class="car-wm" aria-hidden="true" style="animation-delay: -6.5s;">
     <div class="car-light">
     </div>
@@ -3008,7 +3062,7 @@ body{
         </div>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">16 /</span>
+  </div><span class="sec-num" aria-hidden="true">17 /</span>
   <div class="car-wm" aria-hidden="true" style="animation-delay: -13s;">
     <div class="car-light">
     </div>
@@ -3082,16 +3136,16 @@ body{
         <div class="ib-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg>
         </div>
         <h3>MasterCred Honorários</h3>
-        <p>Análise de crédito e capacidade financeira. Apresenta scores de crédito, débitos, protestos, ações judiciais, dados cadastrais, indicadores de risco e parecer técnico especializado com classificação de perfil, capacidade de endividamento (CEI), identificação de Red Flags e recomendações para contratação e parcelamento de honorários.</p>
+        <p>Análise de crédito e capacidade financeira, reunindo informações da Quod, Crédito Positivo e SCR/Bacen. Apresenta scores de crédito, débitos, protestos, ações judiciais, dados cadastrais, indicadores de risco e parecer técnico especializado com classificação de perfil, capacidade de endividamento (CEI), identificação de Red Flags e recomendações para contratação e parcelamento de honorários.</p>
       </div>
       <div class="iconbox glass aoe">
         <div class="ib-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="2.5"></circle><line x1="12" y1="4" x2="12" y2="8"></line><line x1="12" y1="16" x2="12" y2="20"></line><line x1="4" y1="12" x2="8" y2="12"></line><line x1="16" y1="12" x2="20" y2="12"></line></svg>
         </div>
         <h3>MasterCred Veicular</h3>
-        <p>Análise de crédito veicular, reunindo informações cadastrais, restritivas, score de crédito e dados do veículo. Conta com o exclusivo IVI (Índice de Viabilidade Inteligente), que simula o perfil de aprovação junto às principais instituições financeiras, indicando as melhores oportunidades de financiamento. Disponibiliza ainda acesso a consultas complementares como Leilão, Indício de Sinistro, Histórico de Proprietários, Renajud, Renainf, Base Estadual e CNH.</p>
+        <p>Análise de crédito veicular, reunindo informações cadastrais, restritivas, SCR/Bacen, Cadastro Positivo, score de crédito e dados do veículo. Conta com o exclusivo IVI (Índice de Viabilidade Inteligente), que simula o perfil de aprovação junto às principais instituições financeiras, indicando as melhores oportunidades de financiamento. Disponibiliza ainda acesso a consultas complementares como Leilão, Indício de Sinistro, Histórico de Proprietários, Renajud, Renainf, Base Estadual e CNH. Busca realizada por CPF/CNPJ e placa.</p>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">17 /</span>
+  </div><span class="sec-num" aria-hidden="true">18 /</span>
 </section>
 
 <!-- ══════════════ ANTIFRAUDE ══════════════ -->
@@ -3112,7 +3166,7 @@ body{
         </div>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">18 /</span>
+  </div><span class="sec-num" aria-hidden="true">19 /</span>
   <div class="car-wm" aria-hidden="true" style="animation-delay: -19.5s;">
     <div class="car-light">
     </div>
@@ -3224,7 +3278,7 @@ body{
         </div>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">19 /</span>
+  </div><span class="sec-num" aria-hidden="true">20 /</span>
   <div class="car-wm" aria-hidden="true" style="animation-delay: -26s;">
     <div class="car-light">
     </div>
@@ -3249,7 +3303,7 @@ body{
     <div class="cf-head aoe"><span class="ptag"><span class="ptag-dot"></span>Transações Veiculares</span>
       <h2 class="section-h2">Facilite Transações Veiculares</h2>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:.4rem"><span class="pill pill-cyan aoe">27 estados disponíveis para emissão de CRLV-e</span><span class="pill pill-cyan aoe">Comunicação de Venda a nível nacional.</span><span class="pill pill-cyan aoe">Intenção de Venda (RJ/SP/MG)</span><span class="pill pill-cyan aoe">Emissão de código de segurança do CRV a nível nacional</span><span class="pill pill-cyan aoe">Emissão do Número do CRV a nível nacional</span>
+    <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:.4rem"><span class="pill pill-cyan aoe">27 estados disponíveis para emissão de CRLV-e</span><span class="pill pill-cyan aoe">Comunicação de Venda a nível nacional.</span><span class="pill pill-cyan aoe">Intenção de Venda (RJ/SP/MG/MS)</span><span class="pill pill-cyan aoe">Emissão de código de segurança do CRV a nível nacional</span><span class="pill pill-cyan aoe">Emissão do Número do CRV a nível nacional</span>
     </div>
     <div class="iconbox-grid">
       <div class="iconbox glass aoe">
@@ -3268,7 +3322,7 @@ body{
         <div class="ib-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="10" r="3"></circle><path d="M12 21s7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 7 11 7 11z"></path></svg>
         </div>
         <h3>Intenção de Venda</h3>
-        <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:.9rem"><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">RJ</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">SP</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">MG</span>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:.9rem"><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">RJ</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">SP</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">MG</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">MS</span>
         </div>
       </div>
       <div class="iconbox glass aoe">
@@ -3285,7 +3339,7 @@ body{
       <div style="display:flex;flex-wrap:wrap;gap:.5rem"><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Acre</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Alagoas</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Amapá</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Amazonas</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Bahia</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Ceará</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Distrito Federal</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Espírito Santo</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Goiás</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Maranhão</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Mato Grosso</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Mato Grosso do Sul</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Minas Gerais</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Pará</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Paraíba</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Paraná</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Pernambuco</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Piauí</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Rio de Janeiro</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Rio Grande do Norte</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Rio Grande do Sul</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Rondônia</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Roraima</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Santa Catarina</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">São Paulo</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Sergipe</span><span class="pill pill-cyan" style="font-size:.76rem;padding:.4rem .8rem">Tocantins</span>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">20 /</span>
+  </div><span class="sec-num" aria-hidden="true">21 /</span>
   <div class="car-wm" aria-hidden="true" style="animation-delay: -32.5s;">
     <div class="car-light">
     </div>
@@ -3329,7 +3383,7 @@ body{
         </div>
       </div>
     </div>
-  </div><span class="sec-num" aria-hidden="true">21 /</span>
+  </div><span class="sec-num" aria-hidden="true">22 /</span>
 </section>
 
 <!-- ══════════════ CTA FINAL — VENHA AUMENTAR SUAS VENDAS ══════════════ -->
@@ -3356,18 +3410,11 @@ body{
         </div>
         <a class="cg-val" href="mailto:contato@cpcfacil.com.br" style="display:block">contato@cpcfacil.com.br</a>
       </div>
-      <div class="cgrid-card glass aoe">
-        <div class="cg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        </div>
-        <div class="cg-label">Telefone
-        </div>
-        <a class="cg-val" href="tel:+551154410400" style="display:block">(11) 5441-0400</a>
-      </div>
     </div>
     <div style="text-align:center">
       <a class="btn btn-primary aoe" href="https://wa.me/5511911287657" target="_blank" rel="noopener"><svg class="wa-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>Fale Conosco — +55 11 91128-7657 <span class="arr">→</span></a>
     </div>
-  </div><span class="sec-num" aria-hidden="true">22 /</span>
+  </div><span class="sec-num" aria-hidden="true">23 /</span>
 </section>
 </main>
 
@@ -3384,7 +3431,7 @@ body{
             <a href="#s-contact" data-link>Contato</a>
         </div>
     </div>
-    <div class="footer-copy">© 2026 CPC Fácil · Inteligência de Dados · Todos os direitos reservados.</div>
+    <div class="footer-copy">© 2026 CPC Fácil · Inteligência de Dados Premium · Todos os direitos reservados.</div>
 </footer>
 
 <script src="app.js"></script>
