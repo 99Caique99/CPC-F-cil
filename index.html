@@ -1202,12 +1202,11 @@ body{
   #s-comum .card-grid>.fc:nth-child(5){grid-column:4/6}
 }
 
-/* Indício de Sinistro e CSV centralizados (últimos 2 cards órfãos) */
+/* CSV centralizado (último card órfão) */
 @media(min-width:1024px){
   #s-veic .card-grid{grid-template-columns:repeat(6,1fr) !important}
   #s-veic .card-grid>.fc{grid-column:span 2}
-  #s-veic .card-grid>.fc:nth-child(16){grid-column:2/4}
-  #s-veic .card-grid>.fc:nth-child(17){grid-column:4/6}
+  #s-veic .card-grid>.fc:nth-child(16){grid-column:3/5}
 }
 
 /* Facilite Transações Veiculares: grade 2x2 (não 3+1) */
@@ -1731,38 +1730,6 @@ body{
             </td>
           </tr>
           <tr>
-            <td>Protestos (nacional)
-            </td>
-            <td data-col="CRED ESSENCIAL PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED MAIS PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED COMPLETO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED ESSENCIAL POSITIVO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED MAIS POSITIVO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED COMPLETO POSITIVO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-          </tr>
-          <tr>
-            <td>Protestos (estadual – SP)
-            </td>
-            <td data-col="CRED ESSENCIAL PF"><span class="ic-x"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--muted)" stroke-width="3" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="12" x2="18" y2="12"></line></svg></span>
-            </td>
-            <td data-col="CRED MAIS PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED COMPLETO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED ESSENCIAL POSITIVO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED MAIS POSITIVO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-            <td data-col="CRED COMPLETO POSITIVO PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            </td>
-          </tr>
-          <tr>
             <td>CCF
             </td>
             <td data-col="CRED ESSENCIAL PF"><span class="ic-chk"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--cyan-bright)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
@@ -2051,7 +2018,7 @@ body{
           <div class="fc-title">Restrição Financeira PJ
           </div>
         </div>
-        <div class="fc-body">Traz informações sobre pendência e restrição financeira, cheque sem fundo e protesto nacional, base Cenprot. Busca realizada por CNPJ.
+        <div class="fc-body">Traz informações sobre pendências e restrição financeira, cheque sem fundo e protesto direto do bureau. Busca realizada por CNPJ.
         </div>
       </div>
       <div class="fc aoe">
@@ -2081,7 +2048,7 @@ body{
           <div class="fc-title">Max Avançada Score PJ
           </div>
         </div>
-        <div class="fc-body">Informações de restrições financeiras, débitos, score e CCF. Conjugada com Protesto Nacional.
+        <div class="fc-body">Informações de restrições financeiras, débitos, score e CCF.
         </div>
       </div>
       <div class="fc aoe">
@@ -2923,16 +2890,6 @@ body{
           </div>
         </div>
         <div class="fc-body">Identifique todos os veículos ativos vinculados a uma pessoa física ou jurídica. A consulta retorna todos os dados do veículo. Como, placa, município, Renavam, chassi. Busca realizada por CPF ou CNPJ.
-        </div>
-      </div>
-      <div class="fc aoe">
-        <div class="fc-head">
-          <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13"></path><path d="M5 13h14v4a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1H8.5v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"></path><circle cx="7.5" cy="15.4" r=".7"></circle><circle cx="16.5" cy="15.4" r=".7"></circle></svg>
-          </div>
-          <div class="fc-title">VEÍCULO POR PROPRIETÁRIO
-          </div>
-        </div>
-        <div class="fc-body">Retornam até 10 veículos vinculados ao documento consultado, do mais recente para o mais antigo. O retorno é via DETRANs. Busca realizada por CPF/CNPJ.
         </div>
       </div>
       <div class="fc aoe">
